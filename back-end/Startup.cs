@@ -32,10 +32,13 @@ namespace back_end
             services.AddControllers();
 
             //Conexion a la BD
-            services.AddDbContext<BD_GBIFContext>(opt =>
-            opt.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
-            
+            //services.AddDbContext<BD_GBIFContext>(opt =>
+            //opt.UseSqlServer(Configuration.GetConnectionString("DevConnection"))
+            //);
 
+            services.AddDbContext<EspecieContexto>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConexionText")));
+
+            //Dependecias
             services.AddTransient<IEspecieRepository, EspecieRepository>();
         }
 
