@@ -91,7 +91,7 @@ namespace back_end.Repositories
             };
         }
 
-
+        //Insert con procedimientos almacenados
         public async Task InsertEspecie(EspecieModel value)
         {
             using (SqlConnection sql = new SqlConnection(_connectionString))
